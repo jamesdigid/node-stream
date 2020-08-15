@@ -4,6 +4,7 @@ import axios from 'axios';
 import config from '../../server/config/default';
 
 
+
 export default class VideoPlayer extends React.Component {
 
     constructor(props) {
@@ -11,11 +12,12 @@ export default class VideoPlayer extends React.Component {
 
         this.state = {
             stream: false,
-            videoJsOptions: null
+            videoJsOptions: null,
         }
     }
 
     componentDidMount() {
+        //
 
         axios.get('/user', {
             params: {
@@ -28,7 +30,7 @@ export default class VideoPlayer extends React.Component {
                     autoplay: false,
                     controls: true,
                     sources: [{
-                        src: 'http://127.0.0.1:' + config.rtmp_server.http.port + '/live/' + res.data.stream_key + '/index.m3u8',
+                        src: 'http://'+ config.server.host +':' + config.rtmp_server.http.port + '/live/' + res.data.stream_key + '/index.m3u8',
                         type: 'application/x-mpegURL'
                     }],
                     fluid: true,

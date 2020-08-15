@@ -1,6 +1,7 @@
 const config = {
     server: {
-        secret: 'kjVkuti2xAyF3JGCzSZTk0YWM5JhI9mgQW4rytXc',
+        host: '192.168.1.32',
+        secret: 'xxzzZzZZZyyyypppppp',
         port : 3333
     },
     rtmp_server: {
@@ -17,7 +18,7 @@ const config = {
             allow_origin: '*'
         },
         trans: {
-            ffmpeg: '/usr/bin/ffmpeg',
+            ffmpeg: '/usr/local/bin/ffmpeg',
             tasks: [
                 {
                     app: 'live',
